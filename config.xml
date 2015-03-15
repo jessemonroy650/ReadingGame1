@@ -10,8 +10,8 @@
 
         <preference name="phonegap-version" value="3.5.0" />
 
-        <name>Reading California</name>
-        <description>Reading California, teaching the masses to read.</description>
+        <name>Reading Game #1</name>
+        <description>A bingo game for kids</description>
 
         <author href="http://bsdmasterindex.com" email="jessemonroy650@yahoo.com">
         Jesse Monroy
