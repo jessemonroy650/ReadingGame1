@@ -68,7 +68,7 @@ var ReadingGame1 = {
 	    src = this.soundsDirectory + this.sounds[sel];
 		//console.log("gfPlayAudio(src):" + src)
 		alert("gfPlayAudio(src):" + src);
-	    gfPlayAudio.playAudio(src);
+	    PhoneGapAudio.playAudio(src);
 	},
 
 
