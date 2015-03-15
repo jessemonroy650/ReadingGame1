@@ -24,10 +24,13 @@
 		var gValidateShuffle = false; 
 		var gPlaySoundForEveryPointScored = true;
 		var gPlaySoundForEveryGameWon     = true;
+		function onLoad() {
+    	    document.addEventListener("deviceready", onDeviceReady, false);
+	    }
     </script>
 
   </head>
-<body onload="onDeviceReady()">
+<body onload="onLoad()">
     <div class=wrapper style=''><!-- IMG is a block-level element, so use a DIV wrapper to get similar dimensions --><!-- 1ST --><div id=slot1 class="overlayHome onepx-border choice"><img id=card1 class="play" src='lesson1/img2.jpg'></div><!-- 2ND --><div id=slot2 class="overlayHome onepx-border choice"><img id=card2 class="play" src='lesson1/img12.jpg'></div><!-- 3RD --><div id=slot3 class="overlayHome onepx-border choice"><img id=card3 class="play" src='lesson1/img22.jpg'></div><!-- 4TH --><div id=scoreboard class="overlayHome"><!-- SCOREBOARD --><div id=scoreboard_header class='onepx-border' style=''><span id=hidden_button class='score_label hidden' style=''><a href="splash.html">Score</a></span><span id=number_score  class=score style=''>123</span>&nbsp;</div><p class=clear><div id=visual_score class='' style='height:3em;'></div><p class=clear><button id=turn0 class=button>Start</button><!-- SCOREBOARD --></div></div>
     <div class=wrapper style=''><!-- 5TH --><div id=slot4 class="overlayHome onepx-border choice"><img id=card4 class="play" src='lesson1/img32.jpg'></div><!-- 6TH --><div id=slot5 class="overlayHome onepx-border choice"><img id=card5 class="play" src='lesson1/img42.jpg'></div><!-- 7TH --><div id=slot6 class="overlayHome onepx-border choice"><img id=card6 class="play" src='lesson1/img52.jpg'></div><!-- 8TH --><div id=turnslot class="overlayHome"><!-- NEXT_GAME_BUTTON --><span id=reset0 class="resetButton"></span><!-- NEXT_GAME_BUTTON --><img id=card0 class="active active-border" src='lesson1/img_blank.jpg'></div></div>
 <center>

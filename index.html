@@ -11,10 +11,13 @@
 	<script type='text/javascript' src='js/rc-audio-phonegap.js'></script>
 	<script type='text/javascript' src='js/readinggame1.js'></script>
     <script>
+	function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
     </script>
 
   </head>
-<body onload="onDeviceReady()">
+<body onload="onLoad()">
 <p>&nbsp;<p>&nbsp;<p>&nbsp;
 <a href=index1.html>index1.html</a>
 <center>
