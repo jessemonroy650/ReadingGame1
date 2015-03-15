@@ -10,7 +10,7 @@ var ReadingGame1 = {
 	GameVersion       : 'v.'+ '0.8.9',
 	drawingsDirectory : 'lesson1/',
 	audioDirectory    : 'sounds/',
-	androidDirectory  : (true) ? '/android_asset/www/' :  '',
+	androidDirectory  : (gPhoneModel) ? '/android_asset/www/' :  '',
 	soundsDirectory   : 'sounds/',
 	imageType         : '.jpg',
 	selectionIndex    : 0,
