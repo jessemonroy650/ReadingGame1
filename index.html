@@ -25,7 +25,7 @@
 function onDeviceReady() {
 	alert("device ready");
 
-	my_media = new Media(src, onSuccess, onError);
+	my_media = new Media('/android_asset/www/sounds/intro.ogg', onSuccess, onError);
 	my_media.play();
 }
 function onError(e) {
