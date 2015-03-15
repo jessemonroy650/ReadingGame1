@@ -48,11 +48,13 @@ function onDeviceReady() {
 		//lazyLoader('js/rc-audio-phonegap.js','script');
 		gfPlayAudio = PhoneGapAudio;
 		gfPlayAudio.init('audioStub', false);
+		alert('phonegap audio');
 	} else {
 		//lazyLoader('js/rc-audio-webpage.js','script');
 		// Alias the Object
 		gfPlayAudio = WebAudio;
 		gfPlayAudio.init('audioStub', false);
+		alert('web audio');
 	}
 	// 
 

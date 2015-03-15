@@ -11,7 +11,7 @@ var ReadingGame1 = {
 	drawingsDirectory : 'lesson1/',
 	audioDirectory    : 'sounds/',
 	androidDirectory  : (gPhoneModel) ? '/android_asset/www/' :  '',
-	soundsDirectory   : 'sounds/',
+	soundsDirectory   : '/android_asset/www/' + 'sounds/',
 	imageType         : '.jpg',
 	selectionIndex    : 0,
 	fullPlacardScore  : 6,
@@ -67,7 +67,7 @@ var ReadingGame1 = {
 		console.log("img.src:" + img.src + ":sel:" + sel)
 
 	    src = this.soundsDirectory + this.sounds[sel];
-		//console.log("gfPlayAudio(src):" + src)
+		console.log("gfPlayAudio(src):" + src)
 
 	    gfPlayAudio.playAudio(src);
 	},
