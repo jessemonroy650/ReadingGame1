@@ -28,7 +28,8 @@
 function onDeviceReady() {
 
 	//gfPlayAudio = PhoneGapAudio;
-	PhoneGapAudio.init('audioStub', false);
+	//PhoneGapAudio.init('audioStub', false);
+	alert("device ready");
 	PhoneGapAudio.playAudio('/android_asset/www/sounds/intro.ogg');
 }
 <!-- Buttons don't exist until NOW!! -->
