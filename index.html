@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href=css/default.css>
     <style>
     </style>
-	<script type='text/javascript' src='js/rc-audio-phonegap.js'></script>
-	<script type='text/javascript' src='js/readinggame1.js'></script>
     <script>
 	function onLoad() {
 	    document.addEventListener("deviceready", onDeviceReady, false);
@@ -28,11 +26,10 @@
 </body>
 <script type="text/javascript">
 function onDeviceReady() {
-
-	//gfPlayAudio = PhoneGapAudio;
-	//PhoneGapAudio.init('audioStub', false);
 	alert("device ready");
-	PhoneGapAudio.playAudio('/android_asset/www/sounds/intro.ogg');
+
+	my_media = new Media(src, onSuccess, onError);
+	my_media.play();
 }
 <!-- Buttons don't exist until NOW!! -->
 </script>
