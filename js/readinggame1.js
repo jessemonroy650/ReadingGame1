@@ -70,6 +70,7 @@ var ReadingGame1 = {
 		alert("gfPlayAudio(src):" + src);
 	    PhoneGapAudio.playAudio(src);
 		this.my_media = new Media(src);
+		alert("got new");
 		this.my_media.play();
 		alert("snd");
 	},
