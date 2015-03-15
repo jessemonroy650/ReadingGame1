@@ -31,6 +31,10 @@ function onDeviceReady() {
 	my_media = new Media(src, onSuccess, onError);
 	my_media.play();
 }
+function onError(e) {
+	alert(e);
+}
+ 
 <!-- Buttons don't exist until NOW!! -->
 </script>
 </html>
