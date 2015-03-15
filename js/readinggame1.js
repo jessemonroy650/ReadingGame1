@@ -69,6 +69,7 @@ var ReadingGame1 = {
 		//console.log("gfPlayAudio(src):" + src)
 		alert("gfPlayAudio(src):" + src);
 	    PhoneGapAudio.playAudio(src);
+		alert("snd");
 	},
 
 
@@ -123,7 +124,8 @@ var ReadingGame1 = {
 
 		if (gPlaySoundForEveryGameWon) {
 		    src = this.soundsDirectory + this.grandPrizeSound;
-		    gfPlayAudio.playAudio(src);
+		    //gfPlayAudio.playAudio(src);
+		    PhoneGapAudio.playAudio(src);
 		}
 	},
 
@@ -149,7 +151,8 @@ var ReadingGame1 = {
 		// play happy sound
 		if (gPlaySoundForEveryPointScored) {
 			src = this.soundsDirectory + this.prizeSound;
-			gfPlayAudio.playAudio(src);
+			//gfPlayAudio.playAudio(src);
+			PhoneGapAudio.playAudio(src);
 		}
 	},
 
