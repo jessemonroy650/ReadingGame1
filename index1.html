@@ -24,8 +24,10 @@
 		var gValidateShuffle = false; 
 		var gPlaySoundForEveryPointScored = true;
 		var gPlaySoundForEveryGameWon     = true;
+		var gMyDeviceLoad                 = false;
+   	    document.addEventListener("deviceready", onDeviceReady, false);
 		function onLoad() {
-    	    document.addEventListener("deviceready", onDeviceReady, false);
+			onDeviceReady();
 	    }
     </script>
 
@@ -44,6 +46,11 @@
 <script type='text/javascript' src='js/readinggame1.js'></script>
 <script type="text/javascript">
 function onDeviceReady() {
+
+	if (gMyDeviceLoad) {
+		return;
+	}
+	gMyDeviceLoad = true;
 
 	lazyLoader('js/phonegap-device.js','script');
 	// IF WE'RE ON A MOBILE, LOAD PHONEGAP.

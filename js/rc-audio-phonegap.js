@@ -87,6 +87,6 @@ var PhoneGapAudio = {
 	// onError Callback 
 	//
 	onError : function (error) {
-		//alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+		alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
 	}
 };
