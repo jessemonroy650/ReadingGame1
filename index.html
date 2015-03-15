@@ -143,7 +143,13 @@ var ReadingGame1 = {
 		//console.log("gfPlayAudio(src):" + src)
 		alert("noPG-gfPlayAudio(src):" + src);
 	    //PhoneGapAudio.playAudio(src);
-		var my_media = new Media(src, function(){}, function(e) {alert('failed:' + e);} );
+		var my_media = new Media(src, 
+			function(){
+				alert('succeed:');
+			},
+			function(e) {
+				alert('failed:' + e);
+			});
 		alert("got new");
 		my_media.play();
 		alert("snd");
