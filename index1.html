@@ -53,11 +53,12 @@ function onDeviceReady() {
 
 	lazyLoader('js/phonegap-device.js','script');
 	// IF WE'RE ON A MOBILE, LOAD PHONEGAP.
-	if (true) {
+//	if (true) {
 		//lazyLoader('js/rc-audio-phonegap.js','script');
 		gfPlayAudio = PhoneGapAudio;
 		gfPlayAudio.init('audioStub', false);
 		alert('phonegap audio');
+/*
 	} else {
 		//lazyLoader('js/rc-audio-webpage.js','script');
 		// Alias the Object
@@ -65,6 +66,7 @@ function onDeviceReady() {
 		gfPlayAudio.init('audioStub', false);
 		alert('web audio');
 	}
+*/
 	// 
 
 	// This will move
