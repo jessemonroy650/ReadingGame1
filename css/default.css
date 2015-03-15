@@ -1,0 +1,65 @@
+body {margin:0 0 0 0;font-family:sans-serif;cursor:default;}
+* {margin:0;padding:0;}
+
+.wrapper {width:100%;height:auto;margin:0;padding:0;box-sizing:border-box;}
+.overlayHome {
+position:relative;
+width:24.9%;
+height:auto;
+margin:0;padding:0;
+box-sizing:border-box;display:inline-block;
+vertical-align:top;
+}
+
+.play    {width:100%;height:auto;margin:0;padding:0;}
+.active  {width:100%;height:auto;margin:0;padding:0;cursor:cell;}
+.choice  {cursor:pointer;}
+.overlay {width:100%;position:absolute;top:0px;left:0px;z-index:3;}
+
+.play-border   {border:black solid 3px;}
+.active-border {border:royalblue outset 3px;} /* outset is a button style */
+.onepx-border {border:black solid 1px;}
+
+.lesson_font {font-size:2em;font-weight:bold;padding:0.1em;color:#000000;}
+.stock_font  {font-size:2em;font-weight:bold;padding:0.5em;color:#cc2222;}
+.copy_font   {font-size:small;font-weight:bold;padding:1em;color:#224422;text-align:center;}
+.hidden a    {margin:0;padding:0;text-decoration:none;}
+
+#scoreboard {
+box-sizing:border-box;
+font-size:1.0em;
+text-align:center;
+color:black;
+vertical-align:top;
+background-color:#f0f0f0;
+margin:0.05em;
+padding:0;
+cursor:default;
+}
+
+/* The spacing for the scoreboard_header is tricky. */
+#scoreboard_header {margin:0.2em;padding-bottom:0.25em;font-weight:bold;}
+.score_label {float:left;margin:0.1em;}
+.score {float:right;font-family:monospace;font-size:1em;font-weight:bold;text-align:center;background-color:royalblue;color:white;margin:0.1em;padding:0.25em;}
+
+.button {font-family:serif;font-size:1.5em;
+text-align:center;
+background-color:royalblue;color:white;
+padding:5px;margin:2px;
+cursor:cell;
+}
+
+
+.buttonNoHover {font-family:serif;font-size:2em;
+text-align:center;
+background-color:royalblue;color:white;
+padding:5px;margin:0;
+cursor:default;
+}
+
+.resetButton {font-family:serif;font-size:2em;
+text-align:center;
+background-color:violet;color:white;
+padding:0;margin:0;
+cursor:cell;
+}

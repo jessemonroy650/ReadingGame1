@@ -1,0 +1,6 @@
+/* first two (2) required for debugging */
+#thedeck {padding:0;margin:0;width:50%;float:left;}
+#otherdeck {padding:0;margin:0;width:50%;float:right;}
+.counters {padding:5px;margin:0;}
+.number {margin:1px;padding:0.25em;background-color:lightblue;border:black solid 1px;font-size:medium;}
+.shuffled {background-color:lightgreen;}
