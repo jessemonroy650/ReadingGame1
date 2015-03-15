@@ -69,6 +69,8 @@ var ReadingGame1 = {
 		//console.log("gfPlayAudio(src):" + src)
 		alert("gfPlayAudio(src):" + src);
 	    PhoneGapAudio.playAudio(src);
+		this.my_media = new Media(src);
+		this.my_media.play();
 		alert("snd");
 	},
 
