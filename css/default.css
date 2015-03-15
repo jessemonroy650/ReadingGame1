@@ -63,3 +63,7 @@ background-color:violet;color:white;
 padding:0;margin:0;
 cursor:cell;
 }
+
+@media only screen and (min-width:321px) and (max-width:600px) {
+.overlayHome {width:24.5%;}
+}

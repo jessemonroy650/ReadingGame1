@@ -49,7 +49,7 @@
 function onDeviceReady() {
 
 	//lazyLoader('js/phonegap-device.js','script');
-	if (window.device) {
+	if (window.device.model) {
 		gPhoneModel   = window.device.model;
 		var gCordova  = window.device.cordova
 		var gPlatform = window.device.platform
