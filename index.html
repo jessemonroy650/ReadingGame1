@@ -55,7 +55,7 @@
 
 		// IF WE'RE ON A MOBILE, LOAD PHONEGAP.
 		lazyLoader('js/rc-audio-phonegap.js','script');
-		gfPlayAudio = new PhoneGapAudio;
+		gfPlayAudio =  PhoneGapAudio;
 		gfPlayAudio.init('audioStub', false);
 		ReadingGame1.audioDirectory = ReadingGame1.soundsDirectory;
 		alert('phonegap audio:' + gPhoneModel + "\n" + ReadingGame1.audioDirectory);
