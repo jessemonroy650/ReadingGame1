@@ -27,8 +27,13 @@
 		var gPlaySoundForEveryPointScored = true;
 		var gPlaySoundForEveryGameWon     = true;
 		function onLoad() {
+			// Alias the Object
+			gfPlayAudio = WebAudio;
+			gfPlayAudio.init('audioStub', false);
+			ReadingGame1.resetPlacard();
+			alert('web audio:' + ReadingGame1.audioDirectory);
+			//
 	   	    document.addEventListener("deviceready", onDeviceReady, false);
-			//onDeviceReady();
 	    }
     </script>
 
@@ -36,42 +41,35 @@
 <body onload="onLoad()">
     <div class=wrapper style=''><!-- IMG is a block-level element, so use a DIV wrapper to get similar dimensions --><!-- 1ST --><div id=slot1 class="overlayHome onepx-border choice"><img id=card1 class="play" src='lesson1/img2.jpg'></div><!-- 2ND --><div id=slot2 class="overlayHome onepx-border choice"><img id=card2 class="play" src='lesson1/img12.jpg'></div><!-- 3RD --><div id=slot3 class="overlayHome onepx-border choice"><img id=card3 class="play" src='lesson1/img22.jpg'></div><!-- 4TH --><div id=scoreboard class="overlayHome"><!-- SCOREBOARD --><div id=scoreboard_header class='onepx-border' style=''><span id=hidden_button class='score_label hidden' style=''><a href="splash.html">Score</a></span><span id=number_score  class=score style=''>123</span>&nbsp;</div><p class=clear><div id=visual_score class='' style='height:3em;'></div><button id=turn0 class=button>Start</button><!-- SCOREBOARD --></div></div>
     <div class=wrapper style=''><!-- 5TH --><div id=slot4 class="overlayHome onepx-border choice"><img id=card4 class="play" src='lesson1/img32.jpg'></div><!-- 6TH --><div id=slot5 class="overlayHome onepx-border choice"><img id=card5 class="play" src='lesson1/img42.jpg'></div><!-- 7TH --><div id=slot6 class="overlayHome onepx-border choice"><img id=card6 class="play" src='lesson1/img52.jpg'></div><!-- 8TH --><div id=turnslot class="overlayHome"><!-- NEXT_GAME_BUTTON --><span id=reset0 class="resetButton"></span><!-- NEXT_GAME_BUTTON --><img id=card0 class="active active-border" src='lesson1/img_blank.jpg'></div></div>
-<center>
-<audio id=audioStub >Your browser does not support the <code>audio</code> element. This stub is only intended for webpages.</audio>
-<!-- This is for debugging. -->
-<div id=thedeck></div><div id=otherdeck></div>
-</center>
+	<!-- This is for debugging. -->
+	<center>
+		<audio id=audioStub >Your browser does not support the <code>audio</code> element. This stub is only intended for webpages.</audio>
+		<div id=thedeck></div><div id=otherdeck></div>
+	</center>
 </body>
 <script type='text/javascript' src='js/rc-audio-phonegap.js'></script>
 <script type='text/javascript' src='js/rc-audio-webpage.js'></script>
 <!-- <script type='text/javascript' src='js/readinggame1.js'></script> -->
 <script type="text/javascript">
-function onDeviceReady() {
+	function onDeviceReady() {
 
-	// IF WE'RE ON A MOBILE, LOAD PHONEGAP.
-	if (true) {
+		// IF WE'RE ON A MOBILE, LOAD PHONEGAP.
 		//lazyLoader('js/rc-audio-phonegap.js','script');
 		gfPlayAudio = PhoneGapAudio;
 		gfPlayAudio.init('audioStub', false);
-		alert('phonegap audio:' + gPhoneModel);
-	} else {
-		//lazyLoader('js/rc-audio-webpage.js','script');
-		// Alias the Object
-		gfPlayAudio = WebAudio;
-		gfPlayAudio.init('audioStub', false);
-		//alert('web audio');
-	}
-	// 
-	// This will move
-	ReadingGame1.resetPlacard();
-	if (! gPhoneModel) {
-		if (gValidateShuffle) {
-			validateShuffle(); // This is for debugging
+		ReadingGame1.audioDirectory = ReadingGame1.soundsDirectory;
+		alert('phonegap audio:' + gPhoneModel + "\n" + ReadingGame1.audioDirectory);
+		// 
+		if (! gPhoneModel) {
+			if (gValidateShuffle) {
+				validateShuffle(); // This is for debugging
+			}
 		}
+
 	}
 
-}
-
+</script>
+<script type="text/javascript">
 //
 //  Reading California Game #1 - Choose Letter Bingo
 //  by Jesus Monroy, Jr.
@@ -139,20 +137,9 @@ var ReadingGame1 = {
 	    img.src = this.drawingsDirectory + this.drawings[sel];
 		console.log("img.src:" + img.src + ":sel:" + sel)
 
-	    src = this.soundsDirectory + this.sounds[sel];
-		//console.log("gfPlayAudio(src):" + src)
-		alert("noPG-gfPlayAudio(src):" + src);
-	    //PhoneGapAudio.playAudio(src);
-		var my_media = new Media(src, 
-			function(){
-				alert('succeed:');
-			},
-			function(e) {
-				alert('failed:' + e);
-			});
-		alert("got new");
-		my_media.play();
-		alert("snd");
+	    src = this.audioDirectory + this.sounds[sel];
+		console.log("gfPlayAudio(src):" + src)
+	    gfPlayAudio.playAudio(src);
 	},
 
 
@@ -206,9 +193,8 @@ var ReadingGame1 = {
 		k.innerHTML = ('<br>' + this.imageBigPrize);
 
 		if (gPlaySoundForEveryGameWon) {
-		    src = this.soundsDirectory + this.grandPrizeSound;
+		    src = this.audioDirectory + this.grandPrizeSound;
 		    gfPlayAudio.playAudio(src);
-		    //PhoneGapAudio.playAudio(src);
 		}
 	},
 
@@ -233,9 +219,9 @@ var ReadingGame1 = {
 
 		// play happy sound
 		if (gPlaySoundForEveryPointScored) {
-			src = this.soundsDirectory + this.prizeSound;
+			src = this.audioDirectory + this.prizeSound;
 			gfPlayAudio.playAudio(src);
-			//PhoneGapAudio.playAudio(src);
+			console.log("playing" + src);
 		}
 	},
 
@@ -273,6 +259,8 @@ var ReadingGame1 = {
 };
 
 
+</script>
+<script type="text/javascript">
 </script>
 <!-- Buttons don't exist until NOW!! -->
 <script type='text/javascript' src='rc-soundit-buttons.js'></script>
