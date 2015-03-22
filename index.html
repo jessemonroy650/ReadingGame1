@@ -54,7 +54,7 @@
 	function onDeviceReady() {
 
 		// IF WE'RE ON A MOBILE, LOAD PHONEGAP.
-		//lazyLoader('js/rc-audio-phonegap.js','script');
+		lazyLoader('js/rc-audio-phonegap.js','script');
 		gfPlayAudio = PhoneGapAudio;
 		gfPlayAudio.init('audioStub', false);
 		ReadingGame1.audioDirectory = ReadingGame1.soundsDirectory;
