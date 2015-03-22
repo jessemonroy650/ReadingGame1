@@ -139,8 +139,12 @@ var ReadingGame1 = {
 
 	    src = this.audioDirectory + this.sounds[sel];
 		console.log("gfPlayAudio(src):" + src)
-		dialog("gfPlayAudio(src):" + src)
-	    gfPlayAudio.playAudio(src);
+		alert("gfPlayAudio(src):" + src)
+		if (gfPlayAudio) {
+		    gfPlayAudio.playAudio(src);
+		} else {
+			alert("gfPlayAudio did not load.");
+		}
 	},
 
 
