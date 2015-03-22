@@ -135,10 +135,11 @@ var ReadingGame1 = {
 	    img = document.getElementById("card0");
     	// Now Change them all
 	    img.src = this.drawingsDirectory + this.drawings[sel];
-		console.log("img.src:" + img.src + ":sel:" + sel)
+		//console.log("img.src:" + img.src + ":sel:" + sel)
+		alert("img.src:" + img.src + ":sel:" + sel);
 
 	    src = this.audioDirectory + this.sounds[sel];
-		console.log("gfPlayAudio(src):" + src)
+		//console.log("gfPlayAudio(src):" + src)
 		alert("gfPlayAudio(src):" + src)
 		if (gfPlayAudio) {
 		    gfPlayAudio.playAudio(src);
