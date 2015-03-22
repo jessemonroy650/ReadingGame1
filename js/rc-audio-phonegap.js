@@ -22,6 +22,7 @@ var PhoneGapAudio = {
 
 
 	init : function (id) {
+		alert("init:" + id);
 	},
 	//
 	// Play audio
