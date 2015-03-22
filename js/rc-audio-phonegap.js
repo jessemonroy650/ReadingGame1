@@ -29,7 +29,7 @@ var PhoneGapAudio = {
 	playAudio : function (src) {
 		if (this.my_media === null) {
 			// Create Media object from src
-			this.my_media = new Media(src, onSuccess, onError);
+			this.my_media = new Media(src, this.onSuccess, this.onError);
 		} // else play current audio
 		// Play audio
 		this.my_media.play();
@@ -82,6 +82,7 @@ var PhoneGapAudio = {
 	//
 	onSuccess : function () {
 		console.log("playAudio():Audio Success");
+		alert("playAudio():Audio Success");
 	},
 	//
 	// onError Callback 
